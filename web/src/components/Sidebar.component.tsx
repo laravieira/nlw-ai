@@ -17,7 +17,7 @@ function Sidebar() {
                 <FileVideo className="w-4 h-4"/>
                 Selecionar vídeo
             </label>
-            <input type="file" name="video" id="video" accept="video/mp4" className="sr-only"/>
+            <input type="file" name="file" id="video" accept="videoRoute/mp4" className="sr-only"/>
             <div className="space-y-2">
                 <Label htmlFor="transcription-prompt">Prompt de Transcrição</Label>
                 <Textarea id="transcription-prompt" className="h-20 leading-relaxed resize-none" placeholder="Inclua palavras-chaves separadas por vígulas (,)"/>

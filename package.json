@@ -1,12 +1,13 @@
 {
   "name": "nlw-ai",
   "private": true,
+  "description": "Aplicação que possibilita realizar upload de videos e por meio de IA, criar automaticamente títulos chamativos e descrições com um boa indexação.",
   "version": "0.0.0",
   "type": "module",
-  "scripts": {
-  },
-  "dependencies": {
-  },
+  "scripts": {},
   "devDependencies": {
+    "@types/node": "^20.6.0",
+    "tsx": "^3.12.9",
+    "typescript": "^5.2.2"
   }
 }

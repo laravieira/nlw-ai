@@ -1,0 +1,27 @@
+{
+  "name": "nlw-ai-api",
+  "version": "0.0.0",
+  "description": "Aplicação que possibilita realizar upload de videos e por meio de IA, criar automaticamente títulos chamativos e descrições com um boa indexação.",
+  "main": "src/server.ts",
+  "scripts": {
+    "dev": "tsx watch src/server.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.6.0",
+    "dotenv": "^16.3.1",
+    "prisma": "^5.2.0",
+    "tsx": "^3.12.9",
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "@fastify/cors": "^8.3.0",
+    "@fastify/multipart": "^7.7.3",
+    "@prisma/client": "5.2.0",
+    "fastify": "^4.23.0",
+    "openai": "^4.6.0",
+    "zod": "^3.22.2"
+  }
+}
