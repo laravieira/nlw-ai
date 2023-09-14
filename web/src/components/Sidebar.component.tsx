@@ -1,32 +1,15 @@
 import { Separator } from '@/components/ui/separator.tsx';
-import { FileVideo, Upload, Wand2 } from 'lucide-react';
+import { Wand2 } from 'lucide-react';
 import { Label } from '@/components/ui/label.tsx';
-import { Textarea } from '@/components/ui/textarea.tsx';
 import { Button } from '@/components/ui/button.tsx';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select.tsx';
 import { Slider } from '@/components/ui/slider.tsx';
-import { useState } from 'react';
+import FormVideo from '@/components/FormVideo.component.tsx';
 
 function Sidebar() {
-    const [upload] = useState<boolean>(false);
-
     return <aside className="w-80 space-y-6">
         <Separator/>
-        <form action="" className="space-y-6">
-            <label htmlFor="video" className="flex aspect-video cursor-pointer text-sm flex-col gap-2 items-center justify-center text-muted-foreground hover:bg-primary/5">
-                <FileVideo className="w-4 h-4"/>
-                Selecionar vídeo
-            </label>
-            <input type="file" name="file" id="video" accept="videoRoute/mp4" className="sr-only"/>
-            <div className="space-y-2">
-                <Label htmlFor="transcription-prompt">Prompt de Transcrição</Label>
-                <Textarea id="transcription-prompt" className="h-20 leading-relaxed resize-none" placeholder="Inclua palavras-chaves separadas por vígulas (,)"/>
-            </div>
-            <Button type="submit" className="w-full">{ upload
-                ? 'Sucesso'
-                : <>Carregar Video<Upload className="w-4 h-4 ml-2"/></>
-            }</Button>
-        </form>
+        <FormVideo/>
         <Separator/>
         <form action="" className="space-y-6">
             <div className="space-y-2">
