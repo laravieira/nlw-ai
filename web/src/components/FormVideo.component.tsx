@@ -2,10 +2,11 @@ import { Check, FileVideo, Loader, Upload } from 'lucide-react';
 import { Label } from '@/components/ui/label.tsx';
 import { Textarea } from '@/components/ui/textarea.tsx';
 import { Button } from '@/components/ui/button.tsx';
-import { ChangeEvent, FormEvent, useMemo, useState } from 'react';
+import { ChangeEvent, FormEvent, useContext, useMemo, useState } from 'react';
 import useFFmpeg from '@/lib/ffmpeg.ts';
 import { fetchFile } from '@ffmpeg/util';
 import Api from '@/lib/api.ts';
+import Generation from '@/contexts/Generation.context.tsx';
 
 enum Status {
     IDLE,
@@ -16,6 +17,7 @@ enum Status {
 }
 
 function FormVideo() {
+    const { video: videoId } = useContext(Generation);
     const [video, setVideo] = useState<File|null>(null);
     const [status, setStatus] = useState<Status>(Status.IDLE);
 
@@ -53,6 +55,7 @@ function FormVideo() {
         // Upload audio to server
         setStatus(Status.UPLOADING);
         const response = await Api.post('/video', file);
+        videoId.set(response.data.id);
 
         // Transcribe audio
         setStatus(Status.TRANSCRIBING);

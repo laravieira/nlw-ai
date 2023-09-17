@@ -4,10 +4,12 @@
   "description": "Aplicação que possibilita realizar upload de videos e por meio de IA, criar automaticamente títulos chamativos e descrições com um boa indexação.",
   "version": "0.0.0",
   "type": "module",
-  "scripts": {},
-  "devDependencies": {
-    "@types/node": "^20.6.0",
-    "tsx": "^3.12.9",
-    "typescript": "^5.2.2"
+  "scripts": {
+    "install:api": "cd api && pnpm install",
+    "install:web": "cd web && pnpm install",
+    "install": "pnpm run install:api && pnpm run install:web",
+    "dev:api": "cd api && pnpm run dev",
+    "dev:web": "cd web && pnpm run dev",
+    "dev": "pnpm run dev:api && pnpm run dev:web"
   }
 }
